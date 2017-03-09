@@ -16,5 +16,10 @@ namespace iTextSharpTest
         {
             InitializeComponent();
         }
+
+        private void labelEdition_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

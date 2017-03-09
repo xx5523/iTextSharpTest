@@ -49,7 +49,8 @@ html{font-family:仿宋}
 <p>作者：沈雨 单位：安徽省蚌埠市淮上区农业综合服务站</p>
 <p>But after upgrade iText to 5.3.3 they have removed MultiColumnText and suggest use ColumnText instead!</p>
 <p>What way to rewrite this code with ColumnText</p>
-
+</div>
+<div>
 <table>
 <tbody>
 <tr>
@@ -86,6 +87,8 @@ html{font-family:仿宋}
 </tr>
 </tbody>
 </table>
+</div>
+<div mulity-column="true">
 <p>3.3病虫害防治</p>
 <p>苗期注意防治稻蓟马、灰飞虱，分蘖后因苗多、封行早，病虫发生率较高，应根据植保部门病虫情报做好水稻纹枯病、稻瘟病、稻曲病，稻纵卷叶螟、稻飞虱等防治。</p>
 <p>3.3病虫害防治</p>

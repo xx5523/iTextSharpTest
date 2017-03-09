@@ -1,0 +1,19 @@
+.title{
+	color:red;
+	font-size:40px;
+}
+
+div {
+	-moz-column-count:3; /* Firefox */
+-webkit-column-count:3; /* Safari and Chrome */
+column-count:3;
+}
+
+html{
+	font-size:13px;
+	font-family:"Microsoft YaHei" ! important;;
+}
+
+p{
+	text-indent:2em;
+}

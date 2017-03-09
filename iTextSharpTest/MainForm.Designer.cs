@@ -32,7 +32,7 @@
             this.openHtmlDialog = new System.Windows.Forms.OpenFileDialog();
             this.webBrowserForPDF = new System.Windows.Forms.WebBrowser();
             this.btnConfig = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRebulid = new System.Windows.Forms.Button();
             this.btnChooseHtml = new System.Windows.Forms.Button();
             this.tBhtmlPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             // openHtmlDialog
             // 
-            this.openHtmlDialog.FileName = "openFileDialog1";
+            this.openHtmlDialog.FileName = "选择html源";
             // 
             // webBrowserForPDF
             // 
@@ -61,6 +61,7 @@
             this.webBrowserForPDF.Name = "webBrowserForPDF";
             this.webBrowserForPDF.Size = new System.Drawing.Size(882, 400);
             this.webBrowserForPDF.TabIndex = 1;
+            this.webBrowserForPDF.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowserForPDF_DocumentCompleted);
             // 
             // btnConfig
             // 
@@ -69,17 +70,19 @@
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(122, 30);
             this.btnConfig.TabIndex = 2;
-            this.btnConfig.Text = "button1";
+            this.btnConfig.Text = "详细配置";
             this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
-            // button1
+            // btnRebulid
             // 
-            this.button1.Location = new System.Drawing.Point(135, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRebulid.Location = new System.Drawing.Point(135, 15);
+            this.btnRebulid.Name = "btnRebulid";
+            this.btnRebulid.Size = new System.Drawing.Size(115, 30);
+            this.btnRebulid.TabIndex = 3;
+            this.btnRebulid.Text = "重新生成";
+            this.btnRebulid.UseVisualStyleBackColor = true;
+            this.btnRebulid.Click += new System.EventHandler(this.btnRebulid_Click);
             // 
             // btnChooseHtml
             // 
@@ -87,7 +90,7 @@
             this.btnChooseHtml.Name = "btnChooseHtml";
             this.btnChooseHtml.Size = new System.Drawing.Size(115, 30);
             this.btnChooseHtml.TabIndex = 4;
-            this.btnChooseHtml.Text = "button2";
+            this.btnChooseHtml.Text = "选择源文件";
             this.btnChooseHtml.UseVisualStyleBackColor = true;
             this.btnChooseHtml.Click += new System.EventHandler(this.btnChooseHtml_Click);
             // 
@@ -107,7 +110,7 @@
             this.ClientSize = new System.Drawing.Size(893, 469);
             this.Controls.Add(this.tBhtmlPath);
             this.Controls.Add(this.btnChooseHtml);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRebulid);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.webBrowserForPDF);
             this.Controls.Add(this.btnCreatePDF);
@@ -126,7 +129,7 @@
         private System.Windows.Forms.OpenFileDialog openHtmlDialog;
         private System.Windows.Forms.WebBrowser webBrowserForPDF;
         private System.Windows.Forms.Button btnConfig;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRebulid;
         private System.Windows.Forms.Button btnChooseHtml;
         private System.Windows.Forms.TextBox tBhtmlPath;
     }

@@ -24,26 +24,20 @@ namespace iTextSharpTest
         public const string FONT = "c:/windows/fonts/msyh.ttf";
         BaseFont bf = BaseFont.CreateFont(FONT, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         int totalfonts = FontFactory.RegisterDirectory("C:\\WINDOWS\\Fonts");
+        SimplePDFCreator simplePDFCreator;
 
         public MainForm()
         {
             InitializeComponent();
             //dest = new FileStream("output/test.pdf", FileMode.Create);
             bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
-            //baseFont = BaseFont.CreateFont("");
+            simplePDFCreator = new SimplePDFCreator();
         }
 
         private void btnCreatePDF_Click(object sender, EventArgs e)
         {
-            //PdfWriter pdfWriter = new PdfWriter(dest);
-            //PdfDocument pdfDocument = new PdfDocument(pdfWriter);
-            //Document document = new Document(pdfDocument);
-            //document.Add(new Paragraph("Hello World!"));
-            //document.Close();
-            createPDF("input/1.html");
-            //SimplePDFCreator.createPDF("input/2.html");
+            simplePDFCreator.createMultiColumnPdf("input/2.html");
             string appBasePath = AppDomain.CurrentDomain.BaseDirectory;
-            System.Console.WriteLine(appBasePath);
             webBrowserForPDF.Navigate(appBasePath + "hehe.html");
         }
 
@@ -76,9 +70,26 @@ namespace iTextSharpTest
 
         private void btnChooseHtml_Click(object sender, EventArgs e)
         {
-            openHtmlDialog.Filter = "文本文件（*.txt）|*.txt|html网页文件（*.html）|*.html";
+            openHtmlDialog.Filter = "html网页文件（*.html）|*.html|文本文件（*.txt）|*.txt";
             openHtmlDialog.ShowDialog();
             tBhtmlPath.Text = openHtmlDialog.FileName;
+            simplePDFCreator.HTMLSouceFilePath = openHtmlDialog.FileName;
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            ConfigForm configForm = new ConfigForm();
+            configForm.ShowDialog();
+        }
+
+        private void webBrowserForPDF_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void btnRebulid_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
